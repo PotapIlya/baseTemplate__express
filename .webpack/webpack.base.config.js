@@ -6,7 +6,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 module.exports = {
     target: 'node',
     mode :'development',
-    watch : false,
+    watch : true,
     node: {
         __dirname: false,
         __filename: false,
