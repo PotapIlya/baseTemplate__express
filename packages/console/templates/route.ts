@@ -15,7 +15,7 @@ router.get('/${fileName}/create', ${fileName}Controller.create );
 router.post('/${fileName}', ${fileName}Controller.store );
 router.get('/${fileName}/:id', ${fileName}Controller.show );
 router.get('/${fileName}/:id/edit', ${fileName}Controller.edit );
-router.put('/${fileName}/', ${fileName}Controller.update );
+router.put('/${fileName}/:id', ${fileName}Controller.update );
 router.delete('/${fileName}/:id', ${fileName}Controller.destroy );
 
 export {
