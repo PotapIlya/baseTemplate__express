@@ -40,7 +40,7 @@ class Console {
             fileName
         }))).then(() => {
             // update route
-            let data : string = fs.readFileSync('./router/index.ts', {
+            let data : string = fs.readFileSync('./router/app.ts', {
                 encoding:'utf8'
             }).replace('//add', `\n${fileName}, //add`);
 

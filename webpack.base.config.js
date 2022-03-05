@@ -3,23 +3,24 @@ const nodeExternals = require('webpack-node-externals');
 
 
 module.exports = {
-
+    target: 'node',
+    mode :'development',
+    watch : false,
+    node: {
+        __dirname: false,
+        __filename: false,
+    },
+    context: path.resolve(__dirname, './'),
+    entry: [ './server.ts' ],
+    output: {
+        filename: "app.js",
+        path: path.resolve(__dirname, './dist')
+    },
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './'),
         },
         extensions: ['.ts', '.js'],
-    },
-    target: 'node',
-    context: path.resolve(__dirname, './../'),
-    node: {
-        __dirname: false,
-        __filename: false,
-    },
-    entry: [ './server.ts' ],
-    output: {
-        filename: "app.js",
-        path: path.resolve(__dirname, './dist')
     },
     module: {
         rules: [
@@ -30,8 +31,6 @@ module.exports = {
             },
         ],
     },
-    mode :'development',
-    watch : false,
     externals: [
         nodeExternals()
     ]

@@ -9,7 +9,7 @@ module.exports = {
         __dirname: false,
         __filename: false,
     },
-    entry: './packages/console/index.ts',
+    entry: './packages/console/app.ts',
     output: {
         filename: "index.js",
         path: resolve(__dirname, './')

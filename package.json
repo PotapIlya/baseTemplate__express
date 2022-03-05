@@ -2,11 +2,12 @@
   "name": "basetemplate__express",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "server.ts",
   "scripts": {
     "start": "nodemon dist/app.js",
-    "build": "webpack --config .webpack/webpack.prod.conf.js",
-    "dev": "webpack --config .webpack/webpack.dev.config.js",
+    "dev": "webpack --config webpack.base.config.js",
+    "dev2": "webpack --config .webpack/webpack.base.config.js",
+
     "consoleDev": "webpack --config packages/console/webpack.js",
     "console": "node packages/console/index.js"
   },
@@ -26,13 +27,20 @@
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "request": "^2.79.0",
+    "sequelize": "^6.17.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
     "webpack": "^5.70.0"
   },
   "devDependencies": {
     "commander": "^9.0.0",
     "nodemon": "^2.0.15",
     "ts-loader": "^9.2.7",
+    "ts-paths-to-webpack-alias": "^0.3.1",
     "typescript": "^4.6.2",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-node-externals": "^3.0.0"
   }
 }
