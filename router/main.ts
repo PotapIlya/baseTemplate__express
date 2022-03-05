@@ -1,7 +1,7 @@
 import * as express from 'express';
 const router = express();
 
-import {mainController} from '@/controllers/mainController';
+import { mainController } from '@/controllers/mainController';
 
 
 router.get('/', mainController.get );

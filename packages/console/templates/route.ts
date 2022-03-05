@@ -8,7 +8,7 @@ export const routeController = (args: IArgs) : string => {
     return `import * as express from 'express';
 const router = express();
 
-import { ${fileName}Controller } from '../controllers/${path}Controller'
+import { ${fileName}Controller } from '@/controllers/${path}Controller'
 
 router.get('/${fileName}', ${fileName}Controller.get );
 router.get('/${fileName}/create', ${fileName}Controller.create );

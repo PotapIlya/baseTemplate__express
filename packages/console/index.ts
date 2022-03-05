@@ -19,7 +19,6 @@ class Console {
         const program = new Command();
         program
             .option('-c, --controller <type>', 'Controller name')
-            .addHelpText('after', `Пример: node app.js -p res/function -n fileName -a potap -v PIRS-2-XXX`);
 
         program.parse(process.argv);
         return program.opts();
@@ -40,7 +39,7 @@ class Console {
             fileName
         }))).then(() => {
             // update route
-            let data : string = fs.readFileSync('./router/app.ts', {
+            let data : string = fs.readFileSync('./router/index.ts', {
                 encoding:'utf8'
             }).replace('//add', `\n${fileName}, //add`);
 
