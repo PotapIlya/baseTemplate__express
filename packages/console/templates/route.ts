@@ -3,8 +3,7 @@ interface IArgs {
     fileName: string,
 }
 
-export const routeController = (args: IArgs) : string => {
-    const { fileName, path } = args;
+export const routeController = ({ fileName, path }: IArgs) : string => {
     return `import * as express from 'express';
 const router = express();
 

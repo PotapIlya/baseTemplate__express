@@ -2,8 +2,7 @@ interface IArgs {
     fileName: string,
 }
 
-export const templateController = (args: IArgs) : string => {
-    const { fileName } = args;
+export const templateController = ({fileName}: IArgs) : string => {
     return `import { Request, Response } from 'express';
 
 class ${fileName}Controller {
