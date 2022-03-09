@@ -2,23 +2,42 @@ version: '3.1'
 
 services:
 
-  db:
+#  db:
 #    build: ./.docker/db
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: root
-    volumes:
-      - ./.docker/db/data:/var/lib/postgresql/data
-    expose:
-      - "5432"
-    ports:
-      - "5432:5432"
+#    restart: always
+#    environment:
+#      POSTGRES_USER: root
+#      POSTGRES_PASSWORD: root
+#      POSTGRES_DB: root
+#    volumes:
+#      - ./.docker/db/data:/var/lib/postgresql/data
+#    expose:
+#      - "5432"
+#    ports:
+#      - "5432:5432"
+#
+#  adminer:
+#    build: ./.docker/adminer
+#    restart: always
+#    ports:
+#      - 6080:8080
 
-  adminer:
-    build: ./.docker/adminer
-    restart: always
+  node:
+    build: ./.docker/node
     ports:
-      - 6080:8080
+      - 3000:3000
+
+#https://github:
+#  com/nodejs/docker-node/blob/main/README:
+#    md#how-to-use-this-image:
+
+#    image: "node:12"
+#      user: "node"
+#      working_dir: /home/node/app
+#      environment:
+#        - NODE_ENV=development
+#      volumes:
+#        - ./:/home/node/app
+#      expose:
+#        - "8080"
+#      command: "npm start"

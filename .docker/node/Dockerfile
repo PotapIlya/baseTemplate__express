@@ -1,20 +1,14 @@
-FROM node:12
+FROM node:16
 
-# создание директории приложения
-WORKDIR /usr/src/app
 
-# установка зависимостей
-# символ астериск ("*") используется для того чтобы по возможности
-# скопировать оба файла: package.json и package-lock.json
+WORKDIR /home/app
+
+#RUN npm i npm@latest -g
+
 COPY package*.json ./
 
 RUN npm install
-# Если вы создаете сборку для продакшн
-# RUN npm ci --only=production
 
-# копируем исходный код
-COPY ../.. .
+COPY . .
 
-EXPOSE 8080
-#CMD [ "node", "server.js" ]
-CMD [ "npm", "start" ]
+CMD ["node", "server.js"]
